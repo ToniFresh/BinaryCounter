@@ -40,6 +40,8 @@ void CounterWidget::updateCounter()
     if(m_count > 15) m_count = 0;
     if(m_count < 0) m_count = 15;
 
+    for(int cnt = 0; cnt < 4; cnt++) m_ledstates[cnt] = 0;
+
     decToBin(m_count);
 
     m_output->display(m_count);
