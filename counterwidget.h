@@ -16,11 +16,16 @@ public:
 
 public slots:
     void updateCounter();
-
+    void decToBin(int n);
+    void setLEDS();
 private:
      int m_count;
      QTimer m_timer;
      Gpio m_gpio;
+     QLCDNumber* m_output = new QLCDNumber(this);
+     QList<bool> m_states;
+     QList<bool> m_ledstates;
+
 
 };
 
